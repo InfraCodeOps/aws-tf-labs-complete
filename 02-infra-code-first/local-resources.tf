@@ -12,8 +12,8 @@ output "random_string" {
   value = random_string.hello-random.result
 }
 
-# Local file
+# Local file to understand terraform local resource creation
 resource "local_file" "hello-file" {
-  content  = "Hello World: ${random_string.hello-random.result}"
-  filename = "hello-${random_string.hello-random.result}.txt"
+  content  = "This is a terraform-created file with a random name: ${random_string.hello-random.result}"
+  filename = "${random_string.hello-random.result}.txt"
 }
