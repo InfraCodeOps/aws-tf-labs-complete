@@ -5,7 +5,8 @@ locals {
 }
 
 # For each user record, creates an AWS instance
-# The 'for' expression builds a map where the key is the user's email and the value is the user record
+# The 'for' expression builds a map where the key is the user's email
+# and the value is the user record
 resource "aws_instance" "infra-vms" {
   for_each = { for user in local.userinfo : user.email => user }
 
