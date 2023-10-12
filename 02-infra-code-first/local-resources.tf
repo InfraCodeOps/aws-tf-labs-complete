@@ -14,6 +14,8 @@ output "random_string" {
 
 # Local file to understand terraform local resource creation
 resource "local_file" "hello-file" {
+  # The expression assigned to content needs to be on one line
   content  = "This is a terraform-created file with a random name: ${random_string.hello-random.result}"
+  # The expression asssigned to filename needs to be on one line
   filename = "${random_string.hello-random.result}.txt"
 }
