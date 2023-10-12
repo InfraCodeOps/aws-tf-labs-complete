@@ -1,6 +1,9 @@
 terraform {
   # your version might be different
-  required_version = "~> 1.6.1"
+  # The code below instructs Terraform 
+  # to use v1.6.0 and above up to
+  # but not including v2.0.0
+  required_version = "~> 1.6"
   
   required_providers {
     aws = {
@@ -10,7 +13,6 @@ terraform {
     }
   }
 }
-
 provider "aws" {
   region = "us-west-2"
 }
